@@ -15,7 +15,7 @@ int main()
     HangmanGuesser hmGuesser(vocabularyFilePath);
 
     string testFilePath = "data/Ogden_Picturable_200.txt";
-    vector<string> testWords = readWordListFromFile(testFilePath);
+    vector<string> testWords = {"lemon", "apple", "banana", "orange", "pear", "grape", "strawberry", "watermelon",};
 
     vector<MistakeByWord> mistakeList;
     vector<string> unsolvableList;

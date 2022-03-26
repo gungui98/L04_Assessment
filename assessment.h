@@ -22,5 +22,5 @@ struct MistakeByWord {
 void getMistakeByWordList(std::vector<MistakeByWord>& mistakeList, std::vector<std::string>& unsolvableList, 
                         const std::vector<std::string> & testWords, HangmanGuesser& hmGuesser);
 int countMistakes(const std::string& word, HangmanGuesser& hmGuesser);
-
+void updateMask(std::string& mask, const char ch, const std::string& word);
 #endif
