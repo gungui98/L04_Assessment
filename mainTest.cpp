@@ -95,10 +95,10 @@ void runTestLoop(TestStruct testCases[], int testSize){
 class Test : public CPPUNIT_NS::TestCase
 {
     CPPUNIT_TEST_SUITE(Test);
-    CPPUNIT_TEST(testGetMistakeByWordList);
+    CPPUNIT_TEST(testCompareMistakeByWord);
     CPPUNIT_TEST(testCountMistakes);
     CPPUNIT_TEST(testUpdateMask);
-    CPPUNIT_TEST(testCompareMistakeByWord);
+    CPPUNIT_TEST(testGetMistakeByWordList);
     CPPUNIT_TEST_SUITE_END();
 
 public:

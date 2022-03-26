@@ -7,61 +7,27 @@ void updateMask(string& mask, const char ch, const string& word);
 bool isCorrectChar(char ch, const string& mask);
 bool isWholeWord(const string& mask);
 
-void getMistakeByWordList(vector<MistakeByWord>& mistakeList, vector<string>& unsolvableList, const vector<string>& testWords, HangmanGuesser& hmGuesser)
+
+void updateMask(string& mask, const char ch, const string& word)
 {
-    mistakeList.clear();
-    unsolvableList.clear();
-    for (int i = 0; i < testWords.size(); ++i) {
-        int cnt = countMistakes(testWords[i], hmGuesser);
-        if (cnt != -1) {
-            // http://stackoverflow.com/questions/11516657/c-structure-initialization
-            //C1: mistakeList.push_back((MistakeByWord) {cnt, testWords[i]});
-            //C2: MistakeByWord m; m.count = cnt; m.word = testWords[i]; mistakeList.push_back(m);
-            //C3:
-            MistakeByWord m = {cnt, testWords[i]}; 
-            mistakeList.push_back(m);
-        } else {
-            unsolvableList.push_back(testWords[i]);
-        }
-    }
+    // TODO Step 2: given a character ch, update the mask to show the character ch that is in the word
+    //  eg . if ch = 'a' and word = "apple", then mask = "a____"
 }
 
 int countMistakes(const string& word, HangmanGuesser& hmGuesser)
 {
-    int MAX_GUESS = 'z' - 'a' + 1;
-
-    int cnt = 0;
-    hmGuesser.newGame(word.size(), MASK_CHAR);
-    string mask = string(word.size(), MASK_CHAR);
-
-    for (int i = 0; i < MAX_GUESS; ++i) {
-        char nextChar = hmGuesser.getChar(mask);
-        if (nextChar == 0) {
-            return -1;
-        }
-
-        updateMask(mask, nextChar, word);
-
-        if (isCorrectChar(nextChar, mask)) {
-            if (isWholeWord(mask)) {
-                return cnt;
-            }
-        } else {
-            cnt += 1;
-        }
-    }
+    // TODO Step 3: Implement this function, which returns the number of mistakes
+    //  tried to solve the word by the given HangmanGuesser.
     return -1;
-
 }
 
-void updateMask(string& mask, const char ch, const string& word)
+void getMistakeByWordList(vector<MistakeByWord>& mistakeList, vector<string>& unsolvableList, const vector<string>& testWords, HangmanGuesser& hmGuesser)
 {
-    int len = word.length();
-    for (int i = 0; i < len; ++i) {
-        if (word[i] == ch) {
-            mask[i] = ch;
-        }
-    }
+    // TODO Step 4: given a list of words, return a list of mistakes by word,
+    // where each mistake is a struct containing the word and the number of mistakes that guesser has made on that word
+    // you can use the updateMask function to update the mask and isCorrectChar to check if a character is correct
+    // you can use countMistakes to count the number of mistakes
+
 }
 
 bool isCorrectChar(char ch, const string& mask)
