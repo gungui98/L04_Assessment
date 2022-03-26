@@ -1,4 +1,4 @@
-name: SimpleAI CI
+name: Assessment
 
 on:
   pull_request:
