@@ -9,7 +9,7 @@ on:
 jobs:
   simpleAI_job:
     runs-on: ubuntu-latest
-    name: simpleAI Job
+    name: Assessment Job
     steps:
       - uses: actions/checkout@v2
       - name: update
@@ -23,6 +23,4 @@ jobs:
       - name: make
         run: make
       - name: make test
-        run: make test
-      - name: make assessment
         run: make test
