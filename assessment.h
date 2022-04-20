@@ -14,7 +14,13 @@ struct MistakeByWord {
     std::string word;
     bool operator<(const MistakeByWord& m) const
     {
-        // TODO Step 1: Compare 2 MistakeByWord objects by their count, if they are equal, then compare by word
+        /***
+         TODO Step 1: Compare 2 MistakeByWord objects by their count, if they are equal, then compare by word
+         Args:
+            m (MistakeByWord): the MistakeByWord object to compare to this one
+         Returns:
+            boolean true if this object is less than m
+         */
         return false;
     }
 };
